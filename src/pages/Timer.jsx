@@ -29,13 +29,28 @@ export default function Timer() {
   const stopTimer = () => {
     setIsRunning(false);
     const score = getScore(timer);
-    setScores([...scores, score]);
+
+    // Update scores
+    const updatedScores = [...scores, score];
+    setScores(updatedScores);
+
+    // Compute total score & time
+    const totalScore = updatedScores.reduce((a, b) => a + b, 0);
+    const totalTime = updatedScores.length === totalPages
+      ? updatedScores.length * timer // last timer
+      : 0;
 
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
       setTimer(0);
     } else {
-      navigate("/final");
+      navigate("/final", {
+        state: {
+          totalScore,
+          totalTimeSpentInSeconds: scores.length * timer + timer,
+          totalPages,
+        },
+      });
     }
   };
 

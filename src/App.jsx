@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Timer from "./pages/Timer";
 import Final from "./pages/Final";
-
+import ScoreHistory from "./pages/ScoreHistory";
 export const AppContext = React.createContext();
 
 export default function App() {
@@ -17,6 +17,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/timer" element={<Timer />} />
         <Route path="/final" element={<Final />} />
+        <Route path="/history" element={<ScoreHistory />} />
       </Routes>
     </AppContext.Provider>
   );
