@@ -44,7 +44,7 @@ export default function Timer() {
       <div className="card">
         <ProgressBar />
 
-        <h1>Page {currentPage} / {totalPages}</h1>
+        <h1>Question {currentPage} / {totalPages}</h1>
 
         <div className="timer">
           {String(Math.floor(timer / 60)).padStart(2, "0")}:

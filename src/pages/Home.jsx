@@ -34,7 +34,7 @@ export default function Home() {
         <input
           className="input"
           type="number"
-          placeholder="Number of pages"
+          placeholder="Number of Questions"
           value={pages}
           onChange={(e) => setPages(e.target.value)}
         />
